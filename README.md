@@ -4,9 +4,11 @@ This repo is a three-package ROS 2 (C++) workspace showcasing a turtle robot dyn
 
 Once a turtle is reached, it is despawned and a new turtle spawns at a random coordinate.
 
+
 **Iteration 2 (latest src commit), with angular PD controller:**
 
 <img width="1920" height="1080" alt="ROS 2 Turtlesim Catchemall PD" src="https://github.com/user-attachments/assets/a50ba3fd-df50-48ff-82f1-b40a2b6c7616" />
+
 
 **Iteration 1 (outdated), using first principles and without an angular PD controller:**
 
