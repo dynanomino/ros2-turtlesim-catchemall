@@ -6,7 +6,7 @@ Once a turtle is reached, it is despawned and a new turtle spawns at a random co
 
 **Iteration 2 (latest commit), with angular PD controller:**
 
-<img width="800" height="450" alt="ROS 2 Turtlesim Catchemall PD" src="https://github.com/user-attachments/assets/2a28cd98-cdaf-47fb-ae0d-613a4d259666" />
+<img width="1920" height="1080" alt="ROS 2 Turtlesim Catchemall PD" src="https://github.com/user-attachments/assets/a50ba3fd-df50-48ff-82f1-b40a2b6c7616" />
 
 **Iteration 1 (outdated), without angular PD controller:**
 
