@@ -109,13 +109,14 @@ class turtle1_controller : public rclcpp::Node{
             // to prevent the robot from hitting the walls
             if (my_xCoord >= 11.0 || my_xCoord <= 0.5 || my_yCoord <= 0.5 || my_yCoord >= 11.0){
 
-                // stop and keep turning
-
-                msgVelocity.angular.z = maxAngularVel - 1.0;
-
                 // once theta resets close to desired heading, move forward
                 double desiredHeading = std::atan2(target_yCoord - my_yCoord, target_xCoord - my_xCoord);
                 double resetError = my_theta - desiredHeading;
+
+                // for a positive reset error, my_theta is bigger than desiredHeading
+                // so turn right, otherwise turn left
+                resetError > 0 ? msgVelocity.angular.z = - maxAngularVel + 1.0 : msgVelocity.angular.z = maxAngularVel - 1.0; 
+                
                 if (resetError < 0) {resetError *= -1;}
 
                 if (resetError <= 0.1) {
@@ -150,7 +151,7 @@ class turtle1_controller : public rclcpp::Node{
         int myQuadrant = 1;
         double r;
         double thetaTarget;
-        float error_coordThreshold = 0.25;
+        float error_coordThreshold = 0.75;
         bool despawn_is_running = false;
         bool reverse_command_running = false;
         std::string nameCurrentTurtleTarget;
